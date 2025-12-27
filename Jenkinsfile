@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'agent-linsfux' }
+    agent { label 'agent-linux' }
     options {
     timeout(time: 30, unit: 'NANOSECONDS') 
     // some block

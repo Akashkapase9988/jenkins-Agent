@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'agent-linux' }
     options {
-    timeout(time: 3000, unit: 'NANOSECONDS') 
+    timeout(time: 30, unit: 'MINUTES') 
     // some block
         }
     stages {

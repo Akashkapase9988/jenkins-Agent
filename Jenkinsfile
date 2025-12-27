@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/theshubhamgour/jenkins-tutorial.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Akashkapase9988/java-jenkins-docker.git'
 
                 // Run Maven on a Unix agent
                 dir('3-java-jenkins-docker-app') {

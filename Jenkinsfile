@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'worker-node' }
+    agent { label 'agent-linux' }
 
     stages {
         stage('Build') {
@@ -45,15 +45,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Docker Push') {
-            steps {
-                dir('3-java-jenkins-docker-app') {
-                        sh "docker login -u theshubhamgour -p {password} --stdin"
-                        sh "docker tag java-app theshubhamgour/java-app:latest"
-                        sh "docker push theshubhamgour/java-app:latest"
-                    }
-                }
-            }
         }
     }

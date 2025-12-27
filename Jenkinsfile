@@ -11,7 +11,7 @@ pipeline {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Akashkapase9988/java-jenkins-docker.git'
 
                 // Run Maven on a Unix agent
-                dir('3-java-jenkins-docker-app') {
+                dir('Jenkins-Agent') {
                     sh "mvn clean package"
                 }
             }
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('3-java-jenkins-docker-app') {
+                dir('Jenkins-Agent') {
                     sh "mvn test"
                 }
             }
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Compile') {
             steps {
-                dir('3-java-jenkins-docker-app') {
+                dir('Jenkins-Agent') {
                     sh "mvn compile"
                 }
             }
@@ -35,7 +35,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                dir('3-java-jenkins-docker-app') {
+                dir('Jenkins-Agent') {
                     sh "docker build -t java-app ."
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
 
         stage('Docker Run') {
             steps {
-                dir('3-java-jenkins-docker-app') {
+                dir('Jenkins-Agent') {
                     sh "docker run java-app"
                 }
             }

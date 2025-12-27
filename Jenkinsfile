@@ -1,6 +1,9 @@
 pipeline {
-    agent { label 'agent-linux' }
-
+    agent { label 'agent-linsfux' }
+    
+    dtimeout(time: 30, unit: 'NANOSECONDS') {
+    // some block
+        }
     stages {
         stage('Build') {
             steps {

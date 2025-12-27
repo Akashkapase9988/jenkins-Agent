@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'agent-linsfux' }
     
-    dtimeout(time: 30, unit: 'NANOSECONDS') {
+    timeout(time: 30, unit: 'NANOSECONDS') {
     // some block
         }
     stages {

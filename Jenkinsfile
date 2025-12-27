@@ -11,9 +11,9 @@ pipeline {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Akashkapase9988/java-jenkins-docker.git'
 
                 // Run Maven on a Unix agent
-                dir('Jenkins-Agent') {
+               
                     sh "mvn clean package"
-                }
+                
             }
         }
 
